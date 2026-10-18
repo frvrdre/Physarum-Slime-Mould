@@ -1,49 +1,60 @@
-# Physarum Slime Mould Simulation
+# Physarum Polycephalum Simulation
 
-A work-in-progress **Physarum slime mould simulation**, built using **C++ and Raylib**.
+A C++ simulation inspired by *Physarum polycephalum*, a type of slime mould known for its ability to form networks, adapt to its environment and find efficient paths between food sources.
 
-The goal of this project is to simulate the movement and emergent behaviour of slime mould (*Physarum polycephalum*) using autonomous agents.
+I'm building this project using C++ and raylib while learning more about computer science, biological systems and simulation programming.
 
-## Current Features
+The idea came from reading research into how simple computational agents can reproduce some of the behaviours observed in real slime mould. I wanted to try implementing the model myself and understand the mathematics and programming behind it.
 
-- Multiple independently moving agents.
-- Frame-rate-independent movement using delta time.
-- Directional movement using sine and cosine.
-- Wall collision detection and reflection.
-- Simple 2D rendering using Raylib.
+## The Project
 
-## Technologies
+The aim is to build an interactive simulation based on published research into Physarum's behaviour.
 
-- **C++** – Core simulation logic.
-- **Raylib** – Graphics and window management.
-- **C++ Standard Library** – Dynamic agent storage using `std::vector`.
-- **cmath** – Trigonometric calculations.
+Rather than just creating particles that move around randomly, I want to model how agents sense their surroundings, deposit chemical trails and gradually form networks through their interactions.
 
-## How It Works
+Eventually, I want users to be able to modify the simulation through a GUI, experiment with different parameters and see how those changes affect the resulting patterns.
 
-Each agent stores three properties: its X position, Y position, and movement angle.
+I'd also like to explore whether the simulation can be used for pathfinding problems, such as discovering routes through mazes.
 
-Agents move independently based on their angle and speed. When they reach the window boundaries, their direction is reflected to keep them inside the simulation.
+## Current Progress
+
+The project is still in its early stages. So far, I've implemented:
+
+- A basic raylib window and rendering loop.
+- A `Slimes` struct to store each agent's position and direction.
+- Multiple agents managed using `std::vector`.
+- Movement using sine and cosine.
+- Frame-independent movement using delta time.
+- Basic screen boundary handling.
+
+At the moment, the program is a moving-agent prototype rather than a complete Physarum model.
 
 ## Planned Features
 
-- [x] Basic agent movement
-- [x] Multiple agents
-- [x] Boundary collision handling
-- [ ] Randomised agent movement
-- [ ] Chemical trail deposition
-- [ ] Environmental sensing
-- [ ] Trail diffusion and decay
-- [ ] Emergent slime mould patterns
-- [ ] Performance optimisation for thousands of agents
+### Simulation
 
-## Project Status
+- Chemical trail deposition.
+- Environmental sensing using multiple sensors.
+- Agent movement influenced by chemical concentrations.
+- Trail diffusion and decay.
+- Network formation through collective agent behaviour.
+- Food sources and environmental obstacles.
 
-**Early Development - Movement Prototype**
+### Interactive Controls
 
-Currently learning and implementing the foundational systems required for a more realistic Physarum simulation. Chemical trails and agent sensing have not yet been implemented.
+I want the simulation to be something users can experiment with rather than just watch.
 
-## Inspiration
+The planned GUI will allow users to adjust settings such as:
 
-Inspired by research into slime mould behaviour and agent-based simulations of biological systems. I am also reading, Applications of Multi-Agent Slime Mould Computing
-Author: Jeff Jones — University of the West of England https://arxiv.org/pdf/1511.05774
+- Number of agents.
+- Movement speed.
+- Sensor angle and distance.
+- Rotation angle.
+- Chemical trail strength.
+- Diffusion and decay rates.
+- Simulation speed.
+- Colours and rendering options.
+
+I'd also like to include pause, reset and preset options for experimenting with different behaviours.
+
+### Maze Sol 
